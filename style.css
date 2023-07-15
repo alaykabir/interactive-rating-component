@@ -1,0 +1,264 @@
+:root {
+  --clr-primary: hsl(29, 100%, 50%);
+
+  --clr-neutral-white: white;
+  --clr-neutral-grey: hsl(217, 12%, 63%);
+  --clr-neutral-number: hsl(218, 7%, 23%);
+  --clr-neutral-mg: hsl(216, 12%, 54%);
+  --clr-neutral-db: hsl(213, 19%, 18%);
+  --clr-neutral-vdb: hsl(216, 12%, 8%);
+
+  --ff-overpass: 'Overpass', sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 0.8;
+}
+
+/* general styling */
+
+body {
+  font-family: var(--ff-overpass);
+  font-weight: var(--fw-regular);
+  font-size: 0.9rem;
+  background-color: var(--clr-neutral-vdb);
+  color: var(--clr-neutral-white);
+
+  /* for this project */
+  margin: 2rem;
+  max-height: 350px;
+  max-width: 350px;
+}
+
+/* utilities */
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  --content-padding: 1.3rem;
+  --content-spacing: 1.5rem;
+
+  background-color: var(--clr-neutral-db);
+  border-radius: 1rem;
+  overflow: hidden;
+  /* display: none; */
+}
+
+.container-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  width: 40px;
+  background-color: var(--clr-neutral-number);
+  border-radius: 50%;
+
+  overflow: hidden;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+  background-image: url(images/icon-star.svg);
+}
+
+.container-content {
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: var(--content-padding);
+}
+
+.container-info {
+  color: var(--clr-neutral-grey);
+}
+
+.container-rating {
+  justify-content: space-between;
+}
+
+.rating-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.25rem 0 0 0;
+  border: 0;
+  background-color: var(--clr-neutral-number);
+  color: var(--clr-neutral-grey);
+  border-radius: 50%;
+  transition: 0.3s;
+  overflow: hidden;
+  outline: none;
+}
+
+.rating-number:hover {
+  cursor: pointer;
+  background-color: var(--clr-neutral-grey);
+  color: var(--clr-neutral-white);
+}
+
+.rating-number:focus {
+  cursor: pointer;
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-white);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-white);
+  border: none;
+  border-radius: 35px;
+  padding: 0.6em 1.5em;
+  transition: 0.3s;
+  outline: none;
+}
+
+.button:hover {
+  background-color: var(--clr-neutral-white);
+  color: var(--clr-primary);
+}
+
+.result-container {
+  --content-padding: 1.5rem;
+  --content-spacing: 1.5rem;
+
+  background-color: var(--clr-neutral-db);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.result-container-content {
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+
+  padding: var(--content-padding);
+}
+
+.result-icon {
+  height: 108px;
+  width: 162px;
+  background-image: url(images/illustration-thank-you.svg);
+}
+
+.result-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 0.25rem 1.25rem;
+  border-radius: 1.5rem;
+  background-color: var(--clr-neutral-number);
+  color: var(--clr-primary);
+}
+
+span {
+  padding: 0 3px;
+}
+
+.result-container-heading {
+  font-size: 1.7rem;
+}
+
+.result-container-info {
+  text-align: center;
+  color: var(--clr-neutral-grey);
+}
